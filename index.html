@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    :root {
+        --clr-one: #0c0e1d;
+        --clr-two: #111832;
+        --clr-three: #736a81;
+        --clr-four: #181d37;
+        --clr-five: #111734;
+        --clr-six: #bbcbea;
+    }
+
+    body{
+        margin: 0;
+        background-color: #000000;
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--clr-three);
+    }
+    button:hover{
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    button:active{
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    .screen{
+        margin-left: 1.5%;
+        margin-top: 2.5vh;
+        height: 95vh;
+        width: 97%;
+        border-radius: 10px;
+        background-color: grey;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .textfield{
+        width: 76%;
+        height: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .sidebar{
+        border-radius: 10px;
+        width: 24%;
+        height: 100%;
+    }
+    .menu{
+        width: 100%;
+        height: 18%;
+        border-top-left-radius: 10px;
+    }
+    .contacts{
+        border-bottom-left-radius: 10px;
+        width: 100%;
+        height: 82%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .infod{
+        margin-top: 5px;
+        margin-right: 5px;
+        width: 99.5%;
+        height: 10%;
+        display: flex;
+        justify-content: end;
+        background-color: transparent;
+    }
+    .info{
+        width: 27%;
+        height: 100%;
+        z-index: 5;
+        background-color: var(--clr-five);
+        justify-self: end;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+    
+    }
+    .sendbard{
+        height: 10%;
+        width: 100%;
+        border-bottom-right-radius: 10px;
+        background-color: var(--clr-five);
+        justify-self: flex-end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .texts{
+        height: 90%;
+        width: 100%;
+        border-top-right-radius: 10px;
+        background-color: var(--clr-one);
+    }
+    .me{
+        height: 48%;
+        width: 100%;
+        border-top-left-radius: 10px;
+        background-color: var(--clr-two)    ;
+        display: flex;
+        align-items: center;
+    }
+    .options{
+        height: 52%;
+        width: 100%;
+        background-color:var(--clr-five);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .optionbut{
+        width: 100px;
+        height: 50%;
+        border-radius: 20px;
+        border: solid;
+        border-width: 1px;
+        border-color: transparent;
+        background-color:#9388A2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profilephot{
+        width: 43px;
+        height: 43px;
+        margin-left: 4%;
+        margin-right: 1%;
+        border-radius: 50%;
+        background-color: var(--clr-six);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .contact{
+        width: 100%;
+        height: 10%;
+        border: solid;
+        border-width: 1px;
+        border-bottom-color:white;
+        font-size: 18px;
+        border-top-color: transparent;
+        background-color:var(--clr-four);
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .contact:hover{
+        opacity: 0.9;
+    }
+    .contact:active{
+        opacity: 0.87;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: var(--clr-four);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--clr-three);
+        border-radius: 20px;
+    }
+
+    .infot{
+        width: 220px;
+        height: 100%;
+        background-color:transparent;
+
+    }
+    .nameinf{
+        width: 100%;
+        height: 42%;
+        background-color: transparent;
+        border-radius: 20px;
+        padding-left: 20px;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content:left;
+        color: var(--clr-six);
+        align-items: center;
+        
+    }
+    .call{
+        width: 100%;
+        height: 58%;
+        background-color:transparent;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .meinf{
+        width: 80%;
+        height: 70%;
+        background-color:transparent ;
+        color: var(--clr-six);
+        padding-left: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items:center ;
+    }
+    .sendbar{
+        width: 95%;
+        height: 70%;
+        border: none;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
+    .callbut{
+        width: 40%;
+        height: 80%;
+        border: none;
+        border-radius: 20px;
+    }
+    .datei{
+        width: 10%;
+        height: 100%;
+        background-color: var(--clr-four);
+        border-bottom-left-radius: 50px;
+        border-top-left-radius: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .dateibut{
+        width: 35px;
+        height:35px;
+        border-radius: 50%;
+        border: none;
+        background-color: var(--clr-six);
+    }
+    .send{
+        width: 90%;
+        height: 100%;
+        background-color: transparent;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border: none;
+    }
+    .sendtext{
+        width: 90%;
+        height: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 23px;
+        font-family: Arial, Helvetica, sans-serif;   
+        border: none;
+        outline: none;
+    }
+    .sendboth{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border: none;
+
+    }
+    .audio{
+        width: 10%;
+        height: 100%;
+        background-color: var(--clr-four);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: none;
+    }
+    .audiobut{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: solid;
+        border-color: transparent;
+        background-color: var(--clr-six);
+
+    }
+
+    .contprofilephoto{
+        width: 43px;
+        height: 43px;
+        margin-left: 1%;
+        margin-right: 1%;
+        border-radius: 50%;
+        background-color: var(--clr-six);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+</style>
+
+<body>
+    <div class="screen">
+        <div class="textfield">
+            <div class="sendbard">
+                <div class="sendbar">
+                    <div class="datei">
+                        <button class="dateibut"><img src="datei-offnen.png" width="25px" height="25px"></button>
+                        <button class="dateibut"><img src="lacheln.png" width="25px" height="26px"></button>
+                    </div>
+                    <div class="send">
+                        <div class="sendboth">
+                            <input type="text" class="sendtext">
+                            <div class="audio">
+                                <button class="audiobut"><img src="audio.png" width="25px" height="25px"></button>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+
+            <div class="texts">
+                <div class="infod">
+                    <div class="info">
+                        <div class="profilephot"><img src="benutzer.png" width="25px" height="25px"></div>
+                        <div class="infot">
+                            <div class="nameinf">Name</div>
+                            <div class="call">
+                                <button class="callbut"><img src="telefon.png" width="25px" height="25px"></button>
+                                <button class="callbut"><img src="video-pfeil-oben-rechts.png" width="25px" height="25px"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="menu">
+                <div class="me">
+                    <div class="profilephot"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"> MY NAME</div>
+                </div>
+                <div class="options">
+                    <button class="optionbut"> <img src="reifenrobust.png" width="25px" height="25px"></button>
+                    <button class="optionbut"><img src="benutzer-hinzufugen.png" width="25px" height="25px"></button>
+                    <button class="optionbut"><img src="benutzer-alt.png" width="25px" height="25px"></button>
+                </div>
+            </div>
+            <div class="contacts">
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+                <div class="contact">
+                    <div class="contprofilephoto"><img src="benutzer.png" width="25px" height="25px"></div>
+                    <div class="meinf"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
